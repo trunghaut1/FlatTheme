@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+
+    <!-- ///Begin Main Color/// -->
+    <!-- Màu chữ -->
+    <SolidColorBrush x:Key="TextColor" Color="#263238"/>
+    <!-- Màu chính -->
+    <SolidColorBrush x:Key="MainColor" Color="#009688"/>
+    <!-- Màu nền cửa sổ -->
+    <SolidColorBrush x:Key="BackgroundColor" Color="#FFFBFEFF"/>
+    <!-- Màu text bị vô hiệu -->
+    <SolidColorBrush x:Key="DisableTextColor" Color="#607D8B"/>
+    <!-- Màu shadow -->
+    <DropShadowEffect x:Key="MaterialDesignShadowDepth1" BlurRadius="5" ShadowDepth="1" Direction="270" Color="#AA000000" Opacity=".42" po:Freeze="True" />
+    <DropShadowEffect x:Key="MaterialDesignShadowDepth2" BlurRadius="8" ShadowDepth="1.5" Direction="270" Color="#26A69A" Opacity=".42" po:Freeze="True" />
+    <!-- ///End Main Color/// -->
+
+    <!-- ///Button Color/// -->
+    <!-- Màu chữ button -->
+    <SolidColorBrush x:Key="ButtonForegroundColor" Color="White"/>
+    <!-- Màu viền Defaul Button -->
+    <SolidColorBrush x:Key="ButtonDefaulColor" Color="#80CBC4"/>
+    <!-- Màu button exit -->
+    <SolidColorBrush x:Key="ButtonExitColor" Color="#E57373"/>
+
+    <!-- ///Checkbox Color/// -->
+    <!-- Màu checkbox bị vô hiệu -->
+    <SolidColorBrush x:Key="CheckBoxDisableColor" Color="#CFD8DC"/>
+
+    <!-- ///RadioButton Color/// -->
+    <!-- Màu Radio bị vô hiệu (mặc định cùng màu với checkbox) -->
+    <SolidColorBrush x:Key="RadioDisableColor" Color="{Binding Source={StaticResource CheckBoxDisableColor}, Path=Color}"/>
+    
+    <!-- ///ToggleButton Color/// -->
+    <SolidColorBrush x:Key="ToggleActiveColor" Color="#4DB6AC"/>
+    
+    <!--///TextBox Color/// -->
+    <SolidColorBrush x:Key="TextBoxErrorColor" Color="#F44336"/>
+
+    <!--///ComboBox Color/// -->
+    <!-- Màu ComboBox bị vô hiệu (mặc định cùng màu với checkbox) -->
+    <SolidColorBrush x:Key="ComboBoxDisableColor" Color="{Binding Source={StaticResource CheckBoxDisableColor}, Path=Color}"/>
+    <!-- Màu viền combobox khi rê chuột -->
+    <SolidColorBrush x:Key="ComboBoxMouseOverColor" Color="#00796B"/>
+    <!-- Màu cửa sổ popup combobox -->
+    <SolidColorBrush x:Key="ComboBoxPopupBackground" Color="#FFFBFEFF"/>
+
+</ResourceDictionary>
