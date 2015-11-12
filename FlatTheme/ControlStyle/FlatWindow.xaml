@@ -30,7 +30,7 @@
                                                 <Button x:Name="Restore" ToolTip="Thu nhỏ" Content="2" Command="{Binding Source={x:Static SystemCommands.RestoreWindowCommand}}" Visibility="Collapsed" Style="{DynamicResource CommandButton}"/>
                                                 <Button x:Name="Maximize" ToolTip="Phóng to" Content="1" Command="{Binding Source={x:Static SystemCommands.MaximizeWindowCommand}}" Style="{DynamicResource CommandButton}"/>
                                             </Grid>
-                                            <Button Command="{Binding Source={x:Static SystemCommands.CloseWindowCommand}}" Style="{DynamicResource ExitButton}"/>
+                                            <Button Command="{Binding Source={x:Static SystemCommands.CloseWindowCommand}}" Style="{DynamicResource CommandButton}" Content="r" ToolTip="Thoát"/>
                                         </StackPanel>
                                         <TextBlock x:Name="WindowTitleTextBlock" Grid.Row="0" Text="{TemplateBinding Title}" HorizontalAlignment="Left" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"  Margin="8 -1 0 0"  FontSize="16"  Foreground="{DynamicResource BackgroundColor}"/>
                                         <Grid Grid.Row="2">

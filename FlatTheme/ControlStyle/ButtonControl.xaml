@@ -55,7 +55,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaulted" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource ButtonDefaulColor}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource MainColorLight}"/>
                             <Setter Property="BorderThickness" TargetName="border" Value="1"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
@@ -120,7 +120,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaulted" Value="true">
-                            <Setter Property="Stroke" TargetName="border" Value="{DynamicResource ButtonDefaulColor}"/>
+                            <Setter Property="Stroke" TargetName="border" Value="{DynamicResource MainColorLight}"/>
                             <Setter Property="StrokeThickness" TargetName="border" Value="1"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
@@ -135,64 +135,11 @@
         </Setter>
     </Style>
 
-    <!-- Exit button -->
-    <Style x:Key="ExitButton" TargetType="{x:Type Button}">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundColor}"/>
-        <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="0,1,0,0"/>
-        <Setter Property="MinHeight" Value="30" />
-        <Setter Property="MinWidth" Value="30" />
-        <Setter Property="FontFamily" Value="Webdings"/>
-        <Setter Property="Content" Value="r"/>
-        <Setter Property="ToolTip" Value="Thoát"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Grid>
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup Name="CommonStates">
-                                <VisualState Name="Normal"/>
-                                <VisualState Name="MouseOver">
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="OverEff" Storyboard.TargetProperty="Opacity"
-                  To="1" Duration="0:0:0"/>
-                                        <DoubleAnimation Storyboard.TargetName="OverEff" Storyboard.TargetProperty="Width"
-                  From="0" To="{TemplateBinding ActualWidth}" Duration="0:0:0.15"/>
-                                        <DoubleAnimation Storyboard.TargetName="OverEff" Storyboard.TargetProperty="Height"
-                  From="0" To="{TemplateBinding ActualWidth}" Duration="0:0:0.15"/>
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                        <Border Background="{TemplateBinding Background}" x:Name="border" CornerRadius="3" Width="{TemplateBinding ActualWidth}" Height="{TemplateBinding ActualHeight}"/>
-                        <Border Background="{DynamicResource ButtonExitColor}" x:Name="OverEff" Opacity="0" Width="{TemplateBinding ActualWidth}" Height="{TemplateBinding ActualWidth}" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        </Border>
-                        <wpf:Ripple Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Focusable="False"     
-                                                            Feedback="White"
-                                                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                            Padding="{TemplateBinding Padding}" 
-                                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Opacity="0.8"/>
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Opacity" Value="0.26"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
     <!-- Command button -->
     <Style x:Key="CommandButton" TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundColor}"/>
+        <Setter Property="Foreground" Value="{DynamicResource BackgroundColor}"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>

@@ -6,108 +6,8 @@
         xmlns:local="clr-namespace:Demo"
         xmlns:fl="clr-namespace:FlatTheme.ControlStyle;assembly=FlatTheme"
         xmlns:ex="clr-namespace:FlatTheme.Code;assembly=FlatTheme"
-        xmlns:wpf="clr-namespace:FlatTheme.Code;assembly=FlatTheme"
         mc:Ignorable="d"
         Title="FlatTheme" Height="650" Width="1200" Style="{DynamicResource FlatWindow}" WindowStartupLocation="CenterScreen" FontSize="15">
-    <fl:FlatWindow.Resources>
-
-        <Style TargetType="{x:Type TextBox}">
-            <Setter Property="Foreground" Value="{Binding (TextElement.Foreground), RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource MainColor}" />
-            <Setter Property="BorderThickness" Value="0 0 0 1"/>
-            <Setter Property="ex:TextFieldAssist.TextBoxViewMargin" Value="1 0 1 0" />
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="CaretBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Self}}"/>
-            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
-            <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="VerticalContentAlignment" Value="Top"/>
-            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-            <Setter Property="AllowDrop" Value="true"/>
-            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
-            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-            <Setter Property="Validation.ErrorTemplate" Value="{StaticResource MaterialDesignValidationErrorTemplate}"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TextBox}">
-                        <Grid VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-                            <Border x:Name="border"
-								BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
-								Background="{TemplateBinding Background}"
-								SnapsToDevicePixels="True"
-								VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-								Padding="0 4 0 4">
-                                <Grid Margin="{TemplateBinding Padding}">
-                                    <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"
-                                              />
-                                    <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}"
-										Visibility="{TemplateBinding Text, Converter={StaticResource TextFieldHintVisibilityConverter}}"
-										IsHitTestVisible="False"
-										x:Name="Hint"
-										Margin="1 0 1 0"
-										Opacity="{Binding (ex:TextFieldAssist.HintOpacity), RelativeSource={RelativeSource TemplatedParent}}"/>
-                                </Grid>
-                            </Border>
-                            <ex:Underline x:Name="Underline" Background="{TemplateBinding BorderBrush}"/>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
-                            </Trigger>
-                            <Trigger Property="IsKeyboardFocused" Value="true">
-                                <Setter TargetName="Underline" Property="IsActive" Value="True"/>
-                            </Trigger>
-                            <Trigger Property="Validation.HasError" Value="true">
-                                <Setter Property="BorderBrush" Value="{DynamicResource TextBoxErrorColor}"/>
-                                <Setter TargetName="Underline" Property="Background" Value="{DynamicResource TextBoxErrorColor}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <MultiTrigger>
-                    <MultiTrigger.Conditions>
-                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
-                        <Condition Property="IsSelectionActive" Value="false"/>
-                    </MultiTrigger.Conditions>
-                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
-                </MultiTrigger>
-            </Style.Triggers>
-        </Style>
-        <Style TargetType="{x:Type ComboBox}">
-            <!--Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/-->
-            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource MainColor}"/>
-            <Setter Property="Foreground" Value="{Binding (TextElement.Foreground), RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}}"/>
-            <Setter Property="BorderThickness" Value="0 0 0 1"/>
-            <Setter Property="ItemContainerStyle" Value="{StaticResource MaterialDesignComboBoxItemSelectedCollapsedStyle}" />
-            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
-            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
-            <Setter Property="Padding" Value="0 4 0 4"/>
-            <Setter Property="VerticalContentAlignment" Value="Top"/>
-            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
-            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
-            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-            <Setter Property="Template" Value="{StaticResource MaterialDesignComboBoxTemplate}"/>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="true">
-                    <Setter Property="BorderBrush" Value="{DynamicResource ComboBoxMouseOverColor}"/>
-                </Trigger>
-                <Trigger Property="IsKeyboardFocused" Value="true">
-                    <Setter Property="BorderBrush"  Value="{DynamicResource ComboBoxMouseOverColor}"/>
-                </Trigger>
-                <Trigger Property="IsKeyboardFocusWithin" Value="true">
-                    <Setter Property="BorderBrush"  Value="{DynamicResource MainColor}"/>
-                </Trigger>
-                <Trigger Property="IsEditable" Value="true">
-                    <Setter Property="IsTabStop" Value="false"/>
-                    <Setter Property="ItemContainerStyle" Value="{StaticResource MaterialDesignComboBoxItemStyle}" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-    </fl:FlatWindow.Resources>
     <Grid>
         <Button x:Name="button" Content="Defaul Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" Height="45" IsDefault="True" />
         <Button x:Name="button_Copy" Content="Button" HorizontalAlignment="Left" Margin="146,10,0,0" VerticalAlignment="Top" Width="120" Height="45" />
@@ -135,10 +35,10 @@
         <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="32" Margin="469,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Tag="" Text="Disable TextBox" IsEnabled="False"/>
         <TextBox Style="{DynamicResource FloatingHintTextBox}"  x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="45" Margin="698,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Tag="Floating Hint TextBox" />
         <TextBox Style="{DynamicResource NotNullFloatingHintTextBox}"  x:Name="textBox_Copy4" HorizontalAlignment="Left" Height="45" Margin="698,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Tag="Not Null Floating Hint TextBox" />
-        <TextBox BorderBrush="{DynamicResource TextBoxErrorColor}"  x:Name="textBox_Copy6" HorizontalAlignment="Left" Height="32" Margin="469,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Tag="Error TextBox"/>
+        <TextBox BorderBrush="{DynamicResource ErrorColor}"  x:Name="textBox_Copy6" HorizontalAlignment="Left" Height="32" Margin="469,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Tag="Error TextBox"/>
         <TextBox  x:Name="textBox_Copy" HorizontalAlignment="Left" Height="35" Margin="469,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Tag="" Text="TextBox"/>
         <TextBox  x:Name="textBox_Copy5" HorizontalAlignment="Left" Height="32" Margin="469,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Tag="Hint TextBox"/>
-        <TextBox BorderBrush="{DynamicResource TextBoxErrorColor}" Style="{DynamicResource FloatingHintTextBox}"  x:Name="textBox_Copy7" HorizontalAlignment="Left" Height="45" Margin="698,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Tag="Error Floating Hint TextBox" />
+        <TextBox BorderBrush="{DynamicResource ErrorColor}" Style="{DynamicResource FloatingHintTextBox}"  x:Name="textBox_Copy7" HorizontalAlignment="Left" Height="45" Margin="698,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Tag="Error Floating Hint TextBox" />
         <TextBox  x:Name="textBox_Copy8" HorizontalAlignment="Left" Height="76" Margin="936,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Tag="" Text="TextBox&#10;with TextWrapping&#10;Example" AcceptsReturn="True"/>
         <Path Width="24" Height="24" Data="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" 
 					  Fill="{Binding ElementName=textBox_Copy3, Path=BorderBrush}" Margin="660,21,484,497" HorizontalAlignment="Left" VerticalAlignment="Top" />
@@ -184,5 +84,7 @@
             <ComboBoxItem Content="Tizen OS"/>
             <ComboBoxItem Content="Ubuntu OS"/>
         </ComboBox>
+        <DatePicker HorizontalAlignment="Left" Margin="10,252,0,0" VerticalAlignment="Top" Width="136" ex:TextFieldAssist.Hint="DatePicker"/>
+        <DatePicker HorizontalAlignment="Left" Margin="160,252,0,0" VerticalAlignment="Top" Width="162" ex:TextFieldAssist.Hint="Disable DatePicker" IsEnabled="False"/>
     </Grid>
 </fl:FlatWindow>

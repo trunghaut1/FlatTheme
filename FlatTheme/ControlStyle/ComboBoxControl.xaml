@@ -173,25 +173,25 @@
                             <Setter Property="BorderBrush" Value="{DynamicResource MainColor}"/>
                         </MultiDataTrigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource ComboBoxMouseOverColor}"/>
+                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource MainColorLight}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource ComboBoxDisableColor}"/>
+                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource DisableColor}"/>
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false"/>
                                 <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="false"/>
                             </MultiDataTrigger.Conditions>
-                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource ComboBoxDisableColor}"/>
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource DisableColor}"/>
                         </MultiDataTrigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false"/>
                                 <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="true"/>
                             </MultiDataTrigger.Conditions>
-                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource ComboBoxDisableColor}"/>
-                            <Setter Property="BorderBrush" TargetName="splitBorder" Value="{DynamicResource ComboBoxDisableColor}"/>
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource DisableColor}"/>
+                            <Setter Property="BorderBrush" TargetName="splitBorder" Value="{DynamicResource DisableColor}"/>
                         </MultiDataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -261,7 +261,7 @@
                     </Grid.RowDefinitions>
                     <Border x:Name="shadow"
                             Grid.RowSpan="3"
-                            Background="{DynamicResource ComboBoxPopupBackground}"
+                            Background="{DynamicResource BackgroundColor}"
                             CornerRadius="2"
                             Effect="{StaticResource MaterialDesignShadowDepth2}" />
                     <Border x:Name="dropDownBorder"
@@ -438,7 +438,7 @@
                         </Grid.RowDefinitions>
                         <Border x:Name="shadow"
                                 Grid.RowSpan="3"
-                                Background="{DynamicResource ComboBoxPopupBackground}"
+                                Background="{DynamicResource BackgroundColor}"
                                 CornerRadius="2"
                                 Effect="{StaticResource MaterialDesignShadowDepth2}" />
                         <Border x:Name="dropDownBorder"
@@ -578,10 +578,10 @@
         <Setter Property="Template" Value="{StaticResource MaterialDesignComboBoxTemplate}"/>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="BorderBrush" Value="{DynamicResource ComboBoxMouseOverColor}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource MainColorLight}"/>
             </Trigger>
             <Trigger Property="IsKeyboardFocused" Value="true">
-                <Setter Property="BorderBrush"  Value="{DynamicResource ComboBoxMouseOverColor}"/>
+                <Setter Property="BorderBrush"  Value="{DynamicResource MainColorLight}"/>
             </Trigger>
             <Trigger Property="IsKeyboardFocusWithin" Value="true">
                 <Setter Property="BorderBrush"  Value="{DynamicResource MainColor}"/>
@@ -598,13 +598,13 @@
         <Setter Property="wpf:TextFieldAssist.Text" Value="{Binding RelativeSource={RelativeSource Self}, Path=Text}" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="BorderBrush" Value="{DynamicResource ComboBoxMouseOver}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource MainColorLight}"/>
             </Trigger>
             <Trigger Property="IsKeyboardFocused" Value="true">
-                <Setter Property="BorderBrush"  Value="{DynamicResource ComboBoxMouseOver}"/>
+                <Setter Property="BorderBrush"  Value="{DynamicResource MainColorLight}"/>
             </Trigger>
             <Trigger Property="IsKeyboardFocusWithin" Value="true">
-                <Setter Property="BorderBrush"  Value="{DynamicResource ComboBoxMouseOver}"/>
+                <Setter Property="BorderBrush"  Value="{DynamicResource MainColor}"/>
             </Trigger>
             <Trigger Property="IsEditable" Value="true">
                 <Setter Property="IsTabStop" Value="false"/>

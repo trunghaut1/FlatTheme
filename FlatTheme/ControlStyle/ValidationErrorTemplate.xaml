@@ -6,7 +6,7 @@
     <ControlTemplate x:Key="MaterialDesignValidationErrorTemplate">
         <ControlTemplate.Resources>
             <DataTemplate DataType="{x:Type ValidationError}">
-                <TextBlock Foreground="{DynamicResource TextBoxErrorColor}"
+                <TextBlock Foreground="{DynamicResource ErrorColor}"
                                        FontSize="10"
                                        MaxWidth="250"
                                        Margin="1"

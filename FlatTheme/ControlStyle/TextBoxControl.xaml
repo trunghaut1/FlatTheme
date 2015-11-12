@@ -49,13 +49,14 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource DisableColorDark}"/>
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="true">
                             <Setter TargetName="Underline" Property="IsActive" Value="True"/>
                         </Trigger>
                         <Trigger Property="Validation.HasError" Value="true">
-                            <Setter Property="BorderBrush" Value="{DynamicResource TextBoxErrorColor}"/>
-                            <Setter TargetName="Underline" Property="Background" Value="{DynamicResource TextBoxErrorColor}"/>
+                            <Setter Property="BorderBrush" Value="{DynamicResource ErrorColor}"/>
+                            <Setter TargetName="Underline" Property="Background" Value="{DynamicResource ErrorColor}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -173,6 +174,7 @@
 
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource DisableColorDark}"/>
                         </Trigger>
 
                         <Trigger Property="IsKeyboardFocused" Value="true">
@@ -180,8 +182,8 @@
                         </Trigger>
 
                         <Trigger Property="Validation.HasError" Value="true">
-                            <Setter Property="BorderBrush" Value="{DynamicResource TextBoxErrorColor}"/>
-                            <Setter TargetName="Underline" Property="Background" Value="{DynamicResource TextBoxErrorColor}"/>
+                            <Setter Property="BorderBrush" Value="{DynamicResource ErrorColor}"/>
+                            <Setter TargetName="Underline" Property="Background" Value="{DynamicResource ErrorColor}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

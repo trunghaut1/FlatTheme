@@ -87,8 +87,8 @@
                             <Setter Property="Padding" Value="4,0,0,0"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Fill" TargetName="Graphic" Value="{DynamicResource CheckBoxDisableColor}" />
-                            <Setter Property="Foreground" Value="{DynamicResource DisableTextColor}"/>
+                            <Setter Property="Fill" TargetName="Graphic" Value="{DynamicResource DisableColor}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DisableColor}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true"/>
                         <Trigger Property="IsChecked" Value="true">

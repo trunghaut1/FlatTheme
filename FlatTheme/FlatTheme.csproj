@@ -49,12 +49,17 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\CalendarDateCoalesceConverter.cs" />
+    <Compile Include="Code\CustomPopupPlacementCallbackHelper.cs" />
+    <Compile Include="Code\DateTimeEx.cs" />
+    <Compile Include="Code\MaterialDateDisplay.cs" />
     <Compile Include="Code\MathConverter.cs" />
     <Compile Include="Code\NotEmptyValidationRule.cs" />
     <Compile Include="Code\PasswordFieldAssist.cs" />
     <Compile Include="Code\PopupEx.cs" />
     <Compile Include="Code\Ripple.cs" />
     <Compile Include="Code\RippleAssist.cs" />
+    <Compile Include="Code\StringExtensions.cs" />
     <Compile Include="Code\TextFieldAssist.cs" />
     <Compile Include="Code\TextFieldHintVisibilityConverter.cs" />
     <Compile Include="Code\Underline.cs" />
@@ -92,11 +97,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ControlStyle\Calendar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ControlStyle\CheckBoxControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ControlStyle\ComboBoxControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlStyle\DatePickerControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

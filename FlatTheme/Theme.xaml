@@ -11,6 +11,7 @@
         <ResourceDictionary Source="ControlStyle/TextBoxControl.xaml"/>
         <ResourceDictionary Source="ControlStyle/PasswordBoxControl.xaml"/>
         <ResourceDictionary Source="ControlStyle/ComboBoxControl.xaml"/>
+        <ResourceDictionary Source="ControlStyle/DatePickerControl.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type local:Ripple}">
@@ -178,6 +179,43 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:MaterialDateDisplay}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:MaterialDateDisplay}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <StackPanel Orientation="Vertical"
+                                    Margin="0">
+                            <TextBlock x:Name="ComponentThreeTextBlock"
+                                       Text="{TemplateBinding ComponentThreeContent}"
+                                       HorizontalAlignment="Left"
+                                       FontSize="16" FontWeight="Normal" />
+                            <StackPanel x:Name="ComponentOneTwoWrapper" Orientation="Horizontal"
+                                        HorizontalAlignment="Left">
+                                <TextBlock Text="{TemplateBinding ComponentTwoContent}" FontSize="26" FontWeight="Normal" />
+                                <TextBlock Text="{TemplateBinding ComponentOneContent}" Margin="10 0 0 0" FontSize="26" FontWeight="Normal" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDayInFirstComponent" Value="True">
+                            <Setter TargetName="ComponentThreeTextBlock" Property="Opacity" Value=".56"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ComponentThreeTextBlock" Property="Opacity" Value="1"/>
+                            <Setter TargetName="ComponentOneTwoWrapper" Property="Opacity" Value=".56"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+        </Style.Triggers>
     </Style>
 
 </ResourceDictionary>
