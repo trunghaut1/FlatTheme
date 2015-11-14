@@ -24,6 +24,29 @@ namespace Demo
         public MainWindow()
         {
             InitializeComponent();
+            List<SV> l = new List<SV>()
+            {
+                new SV(false,"Trần Trung Hậu","DCT1121","Quận 5"),
+                new SV(false,"Nguyễn Hoài Nam","DCT1121","Quận 5"),
+                new SV(false,"Nguyễn Thanh Nam","DCT1122","TP.HCM"),
+                new SV(true,"Đỗ Minh Tiến","SGU","TP.HCM")
+            };
+            dataGrid.ItemsSource = l;
+        }
+    }
+    public class SV
+    {
+        public string Ten { get; set; }
+        public bool VienChuc { get; set; }
+        public string Lop { get; set; }
+        public string DiaChi { get; set; }
+        
+        public SV(bool v, string t, string l, string d)
+        {
+            VienChuc = v;
+            Ten = t;
+            Lop = l;
+            DiaChi = d;
         }
     }
 }

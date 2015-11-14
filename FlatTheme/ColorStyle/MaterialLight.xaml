@@ -9,6 +9,7 @@
     <!-- Màu chính -->
     <SolidColorBrush x:Key="MainColor" Color="#009688"/>
     <SolidColorBrush x:Key="MainColorLight" Color="#4DB6AC"/>
+    <SolidColorBrush x:Key="MainColorExtraLight" Color="#80CBC4"/>
     <SolidColorBrush x:Key="MainColorDark" Color="#00796B"/>
 
     <!-- Màu nền cửa sổ -->
