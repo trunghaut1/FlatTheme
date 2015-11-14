@@ -14,7 +14,7 @@
             </Setter>
         </Style>
 
-    <Style TargetType="{x:Type ToggleButton}">
+    <Style x:Key="FlatToggleButton" TargetType="{x:Type ToggleButton}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Padding" Value="1"/>

@@ -8,7 +8,7 @@
 
     <wpf:TextFieldHintVisibilityConverter x:Key="TextFieldHintVisibilityConverter" />
 
-    <Style TargetType="{x:Type TextBox}">
+    <Style x:Key="FlatTextBox" TargetType="{x:Type TextBox}">
         <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource MainColor}" />
         <Setter Property="BorderThickness" Value="0 0 0 1"/>
@@ -73,7 +73,7 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="NotNullTextBox" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+    <Style x:Key="NotNullTextBox" TargetType="{x:Type TextBox}" BasedOn="{StaticResource FlatTextBox}">
         <Setter Property="Text">
             <Setter.Value>
                 <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
@@ -85,7 +85,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="FloatingHintTextBox" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+    <Style x:Key="FloatingHintTextBox" TargetType="{x:Type TextBox}" BasedOn="{StaticResource FlatTextBox}">
         <Setter Property="wpf:TextFieldAssist.Text" Value="{Binding RelativeSource={RelativeSource Self}, Path=Text}" />
         <Setter Property="Template">
             <Setter.Value>

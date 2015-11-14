@@ -1,18 +1,8 @@
-﻿using FlatTheme.ControlStyle;
+﻿using FlatTheme.Code;
+using FlatTheme.ControlStyle;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Demo
 {
@@ -32,6 +22,18 @@ namespace Demo
                 new SV(true,"Đỗ Minh Tiến","SGU","TP.HCM")
             };
             dataGrid.ItemsSource = l;
+        }
+
+        private void Toggle_Checked(object sender, RoutedEventArgs e)
+        {
+            // Gọi hàm đổi style từ /FlatTheme.Code (sử dụng class ChangeTheme)
+            // Tên theme là tên file theme trong thư mục /FlatTheme/ColorStyle
+            ChangeTheme.Change("MaterialDark");
+        }
+
+        private void Toggle_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ChangeTheme.Change("MaterialLight");
         }
     }
     public class SV

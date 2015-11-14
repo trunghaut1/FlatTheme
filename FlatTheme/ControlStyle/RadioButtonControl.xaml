@@ -21,7 +21,7 @@
         </Setter>
     </Style>
     <!-- RadioButton -->
-    <Style TargetType="{x:Type RadioButton}">
+    <Style x:Key="FlatRadioButton" TargetType="{x:Type RadioButton}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}"/>

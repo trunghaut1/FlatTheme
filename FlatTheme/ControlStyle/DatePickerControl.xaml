@@ -83,7 +83,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type DatePicker}">
+    <Style x:Key="FlatDatePicker" TargetType="{x:Type DatePicker}">
         <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource MainColor}" />
         <Setter Property="Background" Value="Transparent"/>

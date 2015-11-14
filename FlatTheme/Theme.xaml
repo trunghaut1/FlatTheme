@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:FlatTheme.Code">
-
+    <!-- Import các Control -->
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="ControlStyle/FlatWindow.xaml"/>
         <ResourceDictionary Source="ControlStyle/ButtonControl.xaml"/>
@@ -16,6 +16,25 @@
         <ResourceDictionary Source="ControlStyle/ListBoxControl.xaml"/>
         <ResourceDictionary Source="ControlStyle/DataGridControl.xaml"/>
     </ResourceDictionary.MergedDictionaries>
+    
+    <!-- Áp dụng Style -->
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource FlatButton}"/>
+    <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource FlatCheckBox}"/>
+    <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource FlatRadioButton}"/>
+    <Style TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource FlatToggleButton}"/>
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource FlatTextBox}"/>
+    <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource FlatPasswordBox}"/>
+    <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource FlatComboBox}"/>
+    <Style TargetType="{x:Type Calendar}" BasedOn="{StaticResource MaterialDesignCalendarPortrait}" />
+    <Style TargetType="{x:Type DatePicker}" BasedOn="{StaticResource FlatDatePicker}"/>
+    <Style TargetType="{x:Type Menu}" BasedOn="{StaticResource FlatMenu}"/>
+    <Style TargetType="{x:Type MenuItem}" BasedOn="{StaticResource FlatMenuItem}"/>
+    <Style TargetType="{x:Type ListBox}" BasedOn="{StaticResource FlatListBox}"/>
+    <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource FlatDataGrid}"/>
+    <Style TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource FlatDataGridCell}" />
+    <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource FlatDataGridColumnHeader}" />
+    <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource FlatDataGridRow}" />
+    <Style TargetType="{x:Type DataGridRowHeader}" BasedOn="{StaticResource FlatDataGridRowHeader}" />
 
     <Style TargetType="{x:Type local:Ripple}">
         <Setter Property="HorizontalAlignment" Value="Stretch" />

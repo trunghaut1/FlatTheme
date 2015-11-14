@@ -12,9 +12,16 @@
                         <ResourceDictionary Source="/FlatTheme;component/ColorStyle/MaterialLight.xaml"/>
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
-                <!-- Load tất cả các Control đã sửa (không cần thay đổi) -->
+                <!-- Load tất cả các Control (không cần thay đổi) -->
                 <ResourceDictionary Source="/FlatTheme;component/Theme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            
+            <Style TargetType="{x:Type Label}">
+                <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+            </Style>
+            
         </ResourceDictionary>
+
     </Application.Resources>
+    
 </Application>

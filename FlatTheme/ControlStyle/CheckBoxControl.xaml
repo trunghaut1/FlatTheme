@@ -22,7 +22,7 @@
     </Style>
 
     <!-- CheckBox -->
-    <Style TargetType="{x:Type CheckBox}">
+    <Style x:Key="FlatCheckBox" TargetType="{x:Type CheckBox}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}"/>

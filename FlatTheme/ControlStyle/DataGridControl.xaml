@@ -4,18 +4,20 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="DataGridControl.ComboBox.xaml"/>
+        <ResourceDictionary Source="CheckBoxControl.xaml"/>
+        <ResourceDictionary Source="TextBoxControl.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     <wpf:NotZeroToVisibilityConverter x:Key="NotZeroToVisibilityConverter" />
 
-    <Style x:Key="MaterialDesignDataGridCheckBoxColumnStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}">
+    <Style x:Key="DataGridCheckBoxColumnStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource FlatCheckBox}">
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="IsHitTestVisible" Value="False" />
         <Setter Property="Focusable" Value="False" />
     </Style>
 
-    <Style x:Key="MaterialDesignDataGridCheckBoxColumnEditingStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}">
+    <Style x:Key="DataGridCheckBoxColumnEditingStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource FlatCheckBox}">
         <Setter Property="HorizontalAlignment" Value="Center" />
     </Style>
 
@@ -32,11 +34,10 @@
 
     </Style>
 
-    <Style x:Key="MaterialDesignDataGridTextColumnEditingStyle" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+    <Style x:Key="DataGridTextColumnEditingStyle" TargetType="{x:Type TextBox}" BasedOn="{StaticResource FlatTextBox}">
         <Setter Property="Margin" Value="0 0 0 -5" />
         <Setter Property="BorderThickness" Value="0 0 0 2"/>
         <Setter Property="BorderBrush" Value="{DynamicResource MainColor}" />
-        <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -81,7 +82,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type DataGridCell}">
+    <Style x:Key="FlatDataGridCell" TargetType="{x:Type DataGridCell}">
         <Setter Property="TextBlock.FontSize" Value="13" />
         <Setter Property="Padding" Value="6" />
         <Setter Property="Background" Value="Transparent"/>
@@ -98,21 +99,22 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsKeyboardFocusWithin" Value="True">
-                <Setter Property="BorderBrush" Value="{DynamicResource MainColor}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource MainColorLight}"/>
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="IsSelected" Value="True"/>
                     <Condition Property="Selector.IsSelectionActive" Value="False"/>
                 </MultiTrigger.Conditions>
-                <Setter Property="Background" Value="{DynamicResource MainColor}"/>
+                <Setter Property="Background" Value="{DynamicResource MouseOverDataGridColor}"/>
+                <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
             </MultiTrigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="IsSelected" Value="true"/>
                     <Condition Property="Selector.IsSelectionActive" Value="True"/>
                 </MultiTrigger.Conditions>
-                <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+                <Setter Property="Foreground" Value="{DynamicResource MainColorDark}"/>
             </MultiTrigger>
             <Trigger Property="IsEnabled" Value="false">
                 <Setter Property="Opacity" Value=".56"/>
@@ -133,11 +135,11 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type DataGridColumnHeader}">
+    <Style x:Key="FlatDataGridColumnHeader" TargetType="{x:Type DataGridColumnHeader}">
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="TextBlock.FontSize" Value="14" />
         <Setter Property="TextBlock.FontWeight" Value="Medium" />
-        <Setter Property="Padding" Value="6" />
+        <Setter Property="Padding" Value="5" />
         <Setter Property="Foreground" Value="{DynamicResource TextColorLight}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -208,7 +210,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type DataGridRowHeader}">
+    <Style x:Key="FlatDataGridRowHeader" TargetType="{x:Type DataGridRowHeader}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridRowHeader}">
@@ -227,7 +229,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type DataGridRow}">
+    <Style x:Key="FlatDataGridRow" TargetType="{x:Type DataGridRow}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="SnapsToDevicePixels" Value="true"/>
         <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
@@ -261,10 +263,10 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="{DynamicResource MainColorLight}" />
+                <Setter Property="Background" Value="{DynamicResource SelectedDataGridColor}"/>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource MainColorExtraLight}" />
+                <Setter Property="Background" Value="{DynamicResource MouseOverDataGridColor}"/>
             </Trigger>
             <Trigger Property="IsNewItem" Value="True">
                 <Setter Property="Margin" Value="{Binding NewItemMargin, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
@@ -272,21 +274,21 @@
         </Style.Triggers>
     </Style>
 
-    <Style TargetType="{x:Type DataGrid}">
+    <Style x:Key="FlatDataGrid" TargetType="{x:Type DataGrid}">
         <Setter Property="Background" Value="{DynamicResource BackgroundColor}"/>
         <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource MainColor}"/>
-        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource MainColorLight}"/>
+        <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="GridLinesVisibility" Value="Horizontal" />
         <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected"/>
         <Setter Property="HeadersVisibility" Value="Column" />
         <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
         <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-        <Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource DisableColorLight}" />
-        <Setter Property="wpf:DataGridAssist.AutoGeneratedCheckBoxStyle" Value="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}" />
-        <Setter Property="wpf:DataGridAssist.AutoGeneratedEditingCheckBoxStyle" Value="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}" />
-        <Setter Property="wpf:DataGridAssist.AutoGeneratedEditingTextStyle" Value="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+        <Setter Property="HorizontalGridLinesBrush" Value="Transparent" />
+        <Setter Property="wpf:DataGridAssist.AutoGeneratedCheckBoxStyle" Value="{StaticResource DataGridCheckBoxColumnStyle}" />
+        <Setter Property="wpf:DataGridAssist.AutoGeneratedEditingCheckBoxStyle" Value="{StaticResource DataGridCheckBoxColumnEditingStyle}" />
+        <Setter Property="wpf:DataGridAssist.AutoGeneratedEditingTextStyle" Value="{StaticResource DataGridTextColumnEditingStyle}" />
         <Setter Property="wpf:DataGridAssist.EnableEditBoxAssist" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
@@ -307,7 +309,7 @@
                                             <RowDefinition Height="Auto"/>
                                         </Grid.RowDefinitions>
                                         <Button Command="{x:Static DataGrid.SelectAllCommand}" Focusable="false" Style="{DynamicResource {ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}}" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.All}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" Width="{Binding CellsPanelHorizontalOffset, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
-                                        <Border BorderThickness="0 0 0 1" BorderBrush="{DynamicResource DisableColor}" Grid.Column="1" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Column}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}">
+                                        <Border BorderThickness="0 0 0 1" BorderBrush="{DynamicResource DisableColorLight}" Grid.Column="1" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Column}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}">
                                             <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter" />
                                         </Border>
                                         <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" Grid.ColumnSpan="2" Grid.Row="1"/>

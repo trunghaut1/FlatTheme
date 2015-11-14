@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\CalendarDateCoalesceConverter.cs" />
+    <Compile Include="Code\ChangeTheme.cs" />
     <Compile Include="Code\CustomPopupPlacementCallbackHelper.cs" />
     <Compile Include="Code\DataGridAssist.cs" />
     <Compile Include="Code\DateTimeEx.cs" />
@@ -94,6 +95,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ColorStyle\MaterialDark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ColorStyle\MaterialLight.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

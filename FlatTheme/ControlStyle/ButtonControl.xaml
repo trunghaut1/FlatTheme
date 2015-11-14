@@ -2,7 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:wpf="clr-namespace:FlatTheme.Code">
 
-    <!-- Button mặc định -->
     <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
@@ -13,10 +12,11 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type Button}">
+    <!-- Button mặc định -->
+    <Style x:Key="FlatButton" TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="Background" Value="{DynamicResource MainColor}"/>
-        <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundColor}"/>
+        <Setter Property="Foreground" Value="{DynamicResource BackgroundColor}"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="TextBlock.FontWeight" Value="DemiBold"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -74,7 +74,7 @@
     <Style x:Key="CircleButton" TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="Background" Value="{DynamicResource MainColor}"/>
-        <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundColor}"/>
+        <Setter Property="Foreground" Value="{DynamicResource BackgroundColor}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource MainColor}"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>

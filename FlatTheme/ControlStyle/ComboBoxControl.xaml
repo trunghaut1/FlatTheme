@@ -23,6 +23,7 @@
         <Setter Property="MinHeight" Value="0"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+        <Setter Property="CaretBrush" Value="{DynamicResource MainColor}"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
         <Setter Property="wpf:TextFieldAssist.TextBoxViewMargin" Value="1 0 1 0" />
         <Setter Property="Template">
@@ -263,7 +264,7 @@
                             Grid.RowSpan="3"
                             Background="{DynamicResource BackgroundColor}"
                             CornerRadius="2"
-                            Effect="{StaticResource MaterialDesignShadowDepth2}" />
+                            Effect="{DynamicResource MaterialDesignShadowDepth2}" />
                     <Border x:Name="dropDownBorder"
                             Grid.RowSpan="3"
                             Margin="{Binding ElementName=shadow, Path=Margin, Mode=OneWay}"
@@ -440,7 +441,7 @@
                                 Grid.RowSpan="3"
                                 Background="{DynamicResource BackgroundColor}"
                                 CornerRadius="2"
-                                Effect="{StaticResource MaterialDesignShadowDepth2}" />
+                                Effect="{DynamicResource MaterialDesignShadowDepth2}" />
                         <Border x:Name="dropDownBorder"
                                 Grid.RowSpan="3"
                                 Margin="{Binding ElementName=shadow, Path=Margin, Mode=OneWay}"
@@ -560,7 +561,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style TargetType="{x:Type ComboBox}">
+    <Style x:Key="FlatComboBox" TargetType="{x:Type ComboBox}">
         <!--Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/-->
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Background" Value="Transparent"/>
@@ -593,7 +594,7 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="FloatingHintComboBox" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}">
+    <Style x:Key="FloatingHintComboBox" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource FlatComboBox}">
         <Setter Property="Template" Value="{StaticResource MaterialDesignFloatingHintComboBoxTemplate}"/>
         <Setter Property="wpf:TextFieldAssist.Text" Value="{Binding RelativeSource={RelativeSource Self}, Path=Text}" />
         <Style.Triggers>
