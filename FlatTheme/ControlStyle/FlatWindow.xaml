@@ -8,7 +8,6 @@
         <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
         <Setter Property="Background" Value="{DynamicResource MainColor}"/>
         <Setter Property="UseLayoutRounding" Value="True" />
-        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:FlatWindow">
