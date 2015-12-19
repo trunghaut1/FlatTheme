@@ -24,7 +24,7 @@
         <RadioButton GroupName="ra" x:Name="radioButton" Content="RadioButton 1" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="radioButton_Copy" Content="Disable RadioButton" HorizontalAlignment="Left" Margin="283,174,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <RadioButton GroupName="ra" x:Name="radioButton_Copy1" Content="RadioButton 2" HorizontalAlignment="Left" Margin="146,174,0,0" VerticalAlignment="Top" IsChecked="True"/>
-        <ToggleButton HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,210,0,0" Name="Toggle" Checked="Toggle_Checked" Unchecked="Toggle_Unchecked"/>
+        <ToggleButton HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,210,0,0" Name="Toggle"/>
         <Label x:Name="label" Content="ToggleButton 1" HorizontalAlignment="Left" Margin="44,202,0,0" VerticalAlignment="Top"/>
         <ToggleButton HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346,209,0,0" x:Name="Toggle_Copy" IsEnabled="False"/>
         <Label x:Name="label_Copy" Content="Disable" HorizontalAlignment="Left" Margin="379,202,0,0" VerticalAlignment="Top"/>
@@ -49,12 +49,22 @@
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="698,183,0,0" VerticalAlignment="Top" Width="212" Tag="PasswordBox"/>
         <Path Data="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7,6A6,6 0 0,0 1,12A6,6 0 0,0 7,18C9.61,18 11.83,16.33 12.65,14H17V18H21V14H23V10H12.65Z" 
 					  Fill="{Binding ElementName=passwordBox, Path=BorderBrush}" Margin="660,188,484,330" />
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="936,92,0,0" VerticalAlignment="Top" Width="194" Tag="ComboBox">
-            <ComboBoxItem Content="iOS"/>
-            <ComboBoxItem Content="Android"/>
-            <ComboBoxItem Content="Windows Phone"/>
-            <ComboBoxItem Content="Tizen OS"/>
-            <ComboBoxItem Content="Ubuntu OS"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="936,92,0,0" VerticalAlignment="Top" Width="194" Tag="Select Theme" SelectionChanged="comboBox_SelectionChanged">
+            <ComboBoxItem Content="Material Light"/>
+            <ComboBoxItem Content="Material Dark"/>
+            <ComboBoxItem Content="Blue Light"/>
+            <ComboBoxItem Content="Blue Dark"/>
+            <ComboBoxItem Content="Pink Light"/>
+            <ComboBoxItem Content="Pink Dark"/>
+            <ComboBoxItem Content="Red Light"/>
+            <ComboBoxItem Content="Red Dark"/>
+            <ComboBoxItem Content="Purple Light"/>
+            <ComboBoxItem Content="Purple Dark"/>
+            <ComboBoxItem Content="Green Light"/>
+            <ComboBoxItem Content="Green Dark"/>
+            <ComboBoxItem Content="Orange Light"/>
+            <ComboBoxItem Content="Orange Dark"/>
+            <ComboBoxItem Content="Blue Grey"/>
         </ComboBox>
         <ComboBox IsEditable="True" x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="936,133,0,0" VerticalAlignment="Top" Width="194" Tag="Editable ComboBox">
             <ComboBoxItem Content="iOS"/>

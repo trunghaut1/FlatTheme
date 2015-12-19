@@ -24,16 +24,26 @@ namespace Demo
             dataGrid.ItemsSource = l;
         }
 
-        private void Toggle_Checked(object sender, RoutedEventArgs e)
+        private void comboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            // Gọi hàm đổi style từ /FlatTheme.Code (sử dụng class ChangeTheme)
-            // Tên theme là tên file theme trong thư mục /FlatTheme/ColorStyle
-            ChangeTheme.Change("MaterialDark");
-        }
-
-        private void Toggle_Unchecked(object sender, RoutedEventArgs e)
-        {
-            ChangeTheme.Change("MaterialLight");
+            switch(comboBox.SelectedIndex)
+            {
+                case 0: ChangeTheme.Change("MaterialLight"); break;
+                case 1: ChangeTheme.Change("MaterialDark"); break;
+                case 2: ChangeTheme.Change("BlueLight"); break;
+                case 3: ChangeTheme.Change("BlueDark"); break;
+                case 4: ChangeTheme.Change("PinkLight"); break;
+                case 5: ChangeTheme.Change("PinkDark"); break;
+                case 6: ChangeTheme.Change("RedLight"); break;
+                case 7: ChangeTheme.Change("RedDark"); break;
+                case 8: ChangeTheme.Change("PurpleLight"); break;
+                case 9: ChangeTheme.Change("PurpleDark"); break;
+                case 10: ChangeTheme.Change("GreenLight"); break;
+                case 11: ChangeTheme.Change("GreenDark"); break;
+                case 12: ChangeTheme.Change("OrangeLight"); break;
+                case 13: ChangeTheme.Change("OrangeDark"); break;
+                case 14: ChangeTheme.Change("BlueGrey"); break;
+            }
         }
     }
     public class SV

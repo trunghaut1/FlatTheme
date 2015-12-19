@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+
+    <!-- Màu chữ -->
+    <SolidColorBrush x:Key="TextColor" Color="#FCE4EC"/>
+    <SolidColorBrush x:Key="TextColorLight" Color="#FFFBFEFF"/>
+
+    <!-- Màu chính -->
+    <SolidColorBrush x:Key="MainColor" Color="#EC407A"/>
+    <SolidColorBrush x:Key="MainColorLight" Color="#F06292"/>
+    <SolidColorBrush x:Key="MainColorExtraLight" Color="#F48FB1"/>
+    <SolidColorBrush x:Key="MainColorDark" Color="#C2185B"/>
+
+    <!-- Màu nền cửa sổ -->
+    <SolidColorBrush x:Key="BackgroundColor" Color="#37474F"/>
+
+    <!-- Màu vô hiệu hóa -->
+    <SolidColorBrush x:Key="DisableColor" Color="#607D8B"/>
+    <SolidColorBrush x:Key="DisableColorLight" Color="#78909C"/>
+    <SolidColorBrush x:Key="DisableColorDark" Color="#546E7A"/>
+
+    <!-- Màu lỗi -->
+    <SolidColorBrush x:Key="ErrorColor" Color="#E57373"/>
+
+    <!-- Màu shadow -->
+    <DropShadowEffect x:Key="MaterialDesignShadowDepth1" BlurRadius="5" ShadowDepth="1" Direction="270" Color="#AA000000" Opacity=".42" po:Freeze="True" />
+    <DropShadowEffect x:Key="MaterialDesignShadowDepth2" BlurRadius="8" ShadowDepth="1.5" Direction="270" Color="#AA000000" Opacity=".42" po:Freeze="True" />
+    <DropShadowEffect x:Key="MaterialDesignShadowDepth4" BlurRadius="25" ShadowDepth="8" Direction="270" Color="#AA000000" Opacity=".42" po:Freeze="True" />
+
+    <!-- Màu select DataGrid -->
+    <SolidColorBrush x:Key="MouseOverDataGridColor" Color="{Binding Path=Color, Source={StaticResource MainColor}}" Opacity="0.15"/>
+    <SolidColorBrush x:Key="SelectedDataGridColor" Color="{Binding Path=Color, Source={StaticResource MainColor}}" Opacity="0.25"/>
+
+
+</ResourceDictionary>
