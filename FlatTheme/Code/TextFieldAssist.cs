@@ -144,11 +144,13 @@ namespace FlatTheme.Code
             {
                 return;
             }
-
-            var frameworkElement = (textBox.Template.FindName("PART_ContentHost", textBox) as ScrollViewer)?.Content as FrameworkElement;
-            if (frameworkElement != null)
+            if ((textBox.Template.FindName("PART_ContentHost", textBox) as ScrollViewer) != null)
             {
-                frameworkElement.Margin = margin;
+                var frameworkElement = (textBox.Template.FindName("PART_ContentHost", textBox) as ScrollViewer).Content as FrameworkElement;
+                if (frameworkElement != null)
+                {
+                    frameworkElement.Margin = margin;
+                }
             }
         }
 

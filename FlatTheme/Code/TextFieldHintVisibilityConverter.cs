@@ -7,8 +7,13 @@ namespace FlatTheme.Code
 {
     public class TextFieldHintVisibilityConverter : IValueConverter
     {
-        public Visibility IsEmptyValue { get; set; } = Visibility.Visible;
-        public Visibility IsNotEmptyValue { get; set; } = Visibility.Hidden;
+        public Visibility IsEmptyValue { get; set; }
+        public Visibility IsNotEmptyValue { get; set; }
+        public TextFieldHintVisibilityConverter()
+        {
+            IsEmptyValue = Visibility.Visible;
+            IsNotEmptyValue = Visibility.Hidden;
+        }
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
