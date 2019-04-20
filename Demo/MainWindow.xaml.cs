@@ -43,6 +43,7 @@ namespace Demo
                 case 12: ChangeTheme.Change("OrangeLight"); break;
                 case 13: ChangeTheme.Change("OrangeDark"); break;
                 case 14: ChangeTheme.Change("BlueGrey"); break;
+                case 15: ChangeTheme.Change("LightBlue"); break;
             }
         }
     }

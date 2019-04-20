@@ -65,6 +65,7 @@
             <ComboBoxItem Content="Orange Light"/>
             <ComboBoxItem Content="Orange Dark"/>
             <ComboBoxItem Content="Blue Grey"/>
+            <ComboBoxItem Content="Light Blue"/>
         </ComboBox>
         <ComboBox IsEditable="True" x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="936,133,0,0" VerticalAlignment="Top" Width="194" Tag="Editable ComboBox">
             <ComboBoxItem Content="iOS"/>
